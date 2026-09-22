@@ -1,0 +1,82 @@
+// Adapted from arlagonix/half-life-screen (MIT).
+// Retains the flex window, title, button groups and inset scrolling box.
+$bg: #4c5844;
+$bgDark: #303a2b;
+$textColor: #e0e3cc;
+$primary: #ff9c00;
+$borderDark: #252a21;
+$borderLight: #8c927a;
+
+.stage {
+  position: fixed;
+  inset: 42px 20px 48px 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+  &[data-modal] { inset: 28px; z-index: 10; }
+}
+.wrapper {
+  width: min(650px, 100%);
+  max-height: 100%;
+  padding: 5px;
+  background-color: $bg;
+  border: 1px solid;
+  border-color: $borderLight $borderDark $borderDark $borderLight;
+  box-shadow: 1px 1px 0 #11190f;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $textColor;
+  text-align: left;
+  pointer-events: auto;
+  min-height: 0;
+  hr { border: none; border-top: 1px solid $borderDark; border-bottom: 1px solid $borderLight; }
+  p, a, li { line-height: 1.65; }
+  a { color: $primary; }
+}
+.titlebar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 2px 2px 7px; cursor: move; touch-action: none; }
+.header { font-size: 11px; font-weight: 700; user-select: none; flex-grow: 1; display: flex; align-items: center; gap: 7px; }
+.windowIcon { width: 12px; height: 12px; border: 1px solid #adb499; box-shadow: inset 0 3px #adb499; }
+.closeButton {
+  width: 18px; height: 18px; background: $bg; color: $textColor; line-height: 14px; font-size: 18px; font-family: Tahoma, sans-serif;
+  border: 1px solid; border-color: $borderLight $borderDark $borderDark $borderLight; cursor: pointer;
+  &:hover { color: $primary; }
+  &:active { border-color: $borderDark $borderLight $borderLight $borderDark; }
+}
+.centeredButtonGroup { margin-top: 12px; display: flex; gap: 16px; justify-content: center; }
+
+// Upstream customScrollBar, recolored for opaque GoldSrc panels.
+@mixin customScrollBar {
+  scrollbar-width: thin;
+  scrollbar-color: #889176 $bgDark;
+  &::-webkit-scrollbar { width: 16px; }
+  &::-webkit-scrollbar-track { background-color: $bgDark; border-left: 1px solid $borderDark; border-right: 1px solid $borderLight; }
+  &::-webkit-scrollbar-thumb { background: #647158; border: 1px solid; border-color: $borderLight $borderDark $borderDark $borderLight; }
+}
+.blackBox {
+  @include customScrollBar;
+  overflow-y: auto;
+  background-color: $bgDark;
+  border: 1px solid;
+  border-color: $borderDark $borderLight $borderLight $borderDark;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-weight: 400;
+  min-height: 0;
+}
+@media (min-width: 1500px) { .stage { right: 10vw; left: 31vw; } }
+@media (max-width: 800px) {
+  .stage { position: relative; inset: auto; margin: 20px 16px 24px; z-index: 2; }
+  .stage[data-modal] { position: fixed; inset: 12px; margin: 0; }
+  .wrapper { max-height: none; }
+  .stage[data-modal] .wrapper { max-height: 100%; }
+  .titlebar { cursor: default; }
+}
