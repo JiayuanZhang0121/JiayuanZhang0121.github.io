@@ -1,0 +1,15 @@
+:root { font-family: Tahoma, Verdana, 'Microsoft YaHei', sans-serif; font-size: 12px; line-height: 1.5; color: #d8dfc7; background: #20271c; color-scheme: dark; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-width: 320px; min-height: 100svh; }
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: #ff9c00; text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { border-radius: 0; }
+button:focus-visible, a:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 1px dashed #ffc273; outline-offset: 3px; }
+::selection { background: #ff9c00; color: #172011; }
+::placeholder { color: #b3bba4; }
+h1, h2, h3, h4 { font-size: inherit; }
+.skip-link { position: fixed; top: -60px; left: 12px; padding: 8px; background: #303a2b; z-index: 20; }
+.skip-link:focus { top: 12px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }

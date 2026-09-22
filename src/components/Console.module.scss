@@ -1,0 +1,8 @@
+.overlay { position: fixed; inset: 0; z-index: 9; background: rgb(13 19 10 / 65%); }
+.output { margin: 0 7px; height: min(420px, 56svh); overflow: auto; padding: 14px; background: #252d21; color: #c0c8ab; border: 1px solid; border-color: #242a20 #8c927a #8c927a #242a20; font: 12px/1.6 'Courier New', monospace; white-space: pre-wrap; overflow-wrap: anywhere; scrollbar-color: #879276 #303a2b; }
+.command { color: #ff9c00; }
+.form { display: flex; align-items: center; gap: 8px; margin: 0 7px; color: #ff9c00; }
+.form input { flex: 1; min-width: 0; height: 28px; border: 1px solid; border-color: #242a20 #8c927a #8c927a #242a20; padding: 4px 7px; color: #e1e6d3; background: #303a2b; font-family: 'Courier New', monospace; }
+.form button { background: #4c5844; color: #e0e3cc; padding: 5px 13px; border: 1px solid; border-color: #8c927a #242a20 #242a20 #8c927a; cursor: pointer; }
+.form button:hover { color: #ff9c00; }
+.hint { margin: 0 7px 6px; font-size: 10px; color: #bdc6ad; }
