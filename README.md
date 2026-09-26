@@ -1,43 +1,11 @@
-# JiayuanZhang0121.github.io# 
-Retro Steam / GoldSrc-inspired Personal Site
+# Jiayuan Zhang 的个人网站
 
-这是一个纯静态 GitHub Pages 模板，视觉参考 2000 年代早期 PC 游戏启动器、服务器浏览器和 GoldSrc 时代菜单界面。
+一个白底、简约的静态个人网站，包含首页、学习、项目、生活和关于页面。网页文件位于仓库根目录，可由 GitHub Pages 直接发布，不需要构建步骤或 JavaScript。
 
-## 文件结构
+## 修改内容
 
-```text
-/
-├── index.html
-├── assets/
-│   ├── style.css
-│   └── site.js
-├── life/
-│   └── index.html
-├── study/
-│   └── index.html
-├── projects/
-│   └── index.html
-└── about/
-    └── index.html
-```
+- 在 `generate_site.py` 中编辑各页文字，然后运行 `python generate_site.py` 更新 HTML 文件。
+- 在 `assets/style.css` 中调整排版和颜色。
+- 请将个人身份、联系方式和项目内容按实际情况填写；目前只展示已知的信息，没有示例邮箱或虚构项目。
 
-## 使用方法
-
-把这些文件上传到 `JiayuanZhang0121.github.io` 仓库根目录即可。
-
-网站地址：
-
-- `/` 首页
-- `/life/` 生活
-- `/study/` 学习
-- `/projects/` 项目
-- `/about/` 关于
-
-## 你最需要修改的内容
-
-1. 搜索 `your@email.com` 替换邮箱。
-2. 修改 About 页里的身份、学校、兴趣。
-3. 把各页示例文字替换成自己的内容。
-4. 可以在 `assets/style.css` 顶部修改配色变量。
-
-模板没有使用 Steam / Half-Life / Counter-Strike 的官方 logo、图片或字体，只做了早期 PC 游戏 UI 的视觉致敬。
+本地预览可在仓库根目录运行 `python -m http.server 8000`，然后打开 `http://localhost:8000/`。
