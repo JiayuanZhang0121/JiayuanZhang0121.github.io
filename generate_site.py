@@ -12,6 +12,36 @@ TITLES = {
     "en": ("Home", "Study", "Projects", "Life", "About"),
     "zh": ("首页", "学习", "项目", "生活", "关于"),
 }
+SCORE_BLOCKS = {
+    "en": '''      <section aria-labelledby="toefl-title">
+        <h2 id="toefl-title">TOEFL iBT</h2>
+        <p class="meta">Tested Jul 19, 2026 · Result received Jul 23, 2026 · Scores on the 1–6 scale</p>
+        <table class="score-table">
+          <thead><tr><th scope="col">Section</th><th scope="col">Score</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Reading</th><td>5.0</td></tr>
+            <tr><th scope="row">Listening</th><td>5.5</td></tr>
+            <tr><th scope="row">Speaking</th><td>5.5</td></tr>
+            <tr><th scope="row">Writing</th><td>6.0</td></tr>
+          </tbody>
+          <tfoot><tr><th scope="row">Overall</th><td>5.5 / 6</td></tr></tfoot>
+        </table>
+      </section>''',
+    "zh": '''      <section aria-labelledby="toefl-title">
+        <h2 id="toefl-title">托福 iBT</h2>
+        <p class="meta">2026 年 7 月 19 日考试 · 7 月 23 日取得成绩 · 采用 1–6 分制</p>
+        <table class="score-table">
+          <thead><tr><th scope="col">项目</th><th scope="col">分数</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">阅读</th><td>5.0</td></tr>
+            <tr><th scope="row">听力</th><td>5.5</td></tr>
+            <tr><th scope="row">口语</th><td>5.5</td></tr>
+            <tr><th scope="row">写作</th><td>6.0</td></tr>
+          </tbody>
+          <tfoot><tr><th scope="row">总分</th><td>5.5 / 6</td></tr></tfoot>
+        </table>
+      </section>''',
+}
 
 CONTENT = {
     "en": {
@@ -37,6 +67,7 @@ CONTENT = {
           <li><time datetime="2026-07-19">Jul 19, 2026</time> — Took the TOEFL iBT.</li>
         </ul>
       </section>
+{{SCORES}}
       <section aria-labelledby="education-title">
         <h2 id="education-title">Education</h2>
         <h3><a href="https://www2.ncwu.edu.cn/ncwuenglish/">North China University of Water Resources and Electric Power</a></h3>
@@ -80,6 +111,7 @@ CONTENT = {
         <li><h3>North China University of Water Resources and Electric Power</h3><p>Computer Science and Technology, School of Information Engineering · Undergraduate, 2023–present</p></li>
         <li><h3>Zhengzhou University</h3><p>Preliminarily admitted for postgraduate study through the recommendation track on Sep 24, 2026.</p></li>
       </ul>
+{{SCORES}}
       <h2>Documents</h2>
       <p class="document-links">Undergraduate transcripts: <a href="{{DOC_EN}}" type="application/pdf">English PDF</a> · <a href="{{DOC_ZH}}" type="application/pdf">Chinese PDF</a></p>
       <p class="notice">These public copies have the student ID redacted. The TOEFL score report is not published here.</p>
@@ -109,6 +141,7 @@ CONTENT = {
           <li><time datetime="2026-07-19">2026.07.19</time> — 参加托福 iBT 考试。</li>
         </ul>
       </section>
+{{SCORES}}
       <section aria-labelledby="education-title">
         <h2 id="education-title">教育背景</h2>
         <h3><a href="https://www.ncwu.edu.cn/">华北水利水电大学</a></h3>
@@ -152,6 +185,7 @@ CONTENT = {
         <li><h3>华北水利水电大学</h3><p>信息工程学院 · 计算机科学与技术 · 本科在读（2023 年至今）</p></li>
         <li><h3>郑州大学</h3><p>2026 年 9 月 24 日获推免预录取，尚未入学。</p></li>
       </ul>
+{{SCORES}}
       <h2>相关材料</h2>
       <p class="document-links">本科成绩单：<a href="{{DOC_ZH}}" type="application/pdf">中文版 PDF</a> · <a href="{{DOC_EN}}" type="application/pdf">英文版 PDF</a></p>
       <p class="notice">公开版本已遮盖学号。托福成绩报告未在网站公开。</p>
@@ -181,6 +215,7 @@ def page(language: str, route: str) -> str:
     )
     body = CONTENT[language][route]
     replacements = {
+        "{{SCORES}}": SCORE_BLOCKS[language],
         "{{DOC_EN}}": root + "assets/docs/transcript-en-redacted.pdf",
         "{{DOC_ZH}}": root + "assets/docs/transcript-zh-redacted.pdf",
         **{f"{{{{{key.upper()}}}}}": target(current_base, key) for key in ROUTES},
