@@ -1,119 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
-  <title>Jiayuan Zhang · Jiayuan Zhang</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Jiayuan Zhang 的个人主页：学习笔记、项目与生活记录。">
+  <title>首页 · Jiayuan Zhang</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="shell">
-    <div class="topbar">
-      <div class="brand">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div>
-          <strong>JIAYUAN // PERSONAL TERMINAL</strong><br>
-          <span>build 0121</span>
-        </div>
-      </div>
-      <div class="status">● ONLINE &nbsp; <span data-clock></span></div>
-    </div>
-
-    <header class="hero">
-      <div class="kicker">Personal Site // Main Menu</div>
-      <h1>Jiayuan Zhang</h1>
-      <p>Life, study, projects and miscellaneous logs from one human on the internet.</p>
+  <a class="skip-link" href="#content">跳转到正文</a>
+  <div class="page">
+    <header class="site-header">
+      <p class="site-name"><a href="index.html">Jiayuan Zhang</a></p>
+      <p class="site-subtitle">学习笔记 · 项目 · 生活记录</p>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="index.html" aria-current="page">首页</a>
+        <a href="study/">学习</a>
+        <a href="projects/">项目</a>
+        <a href="life/">生活</a>
+        <a href="about/">关于</a>
+      </nav>
     </header>
+    <main id="content">
+      <section class="intro" aria-labelledby="intro-title">
+        <div>
+          <h1 id="intro-title">你好，我是 Jiayuan Zhang</h1>
+          <p class="lead">这里记录我的学习、项目和生活。关注 AI、机器学习与计算机系统，也会写下日常发现和一些值得记住的片段。</p>
+          <p>这个网站会随着学习和实践慢慢更新。</p>
+          <div class="link-row"><a href="https://github.com/JiayuanZhang0121">GitHub</a><a href="about/">关于我</a></div>
+        </div>
+        <aside class="profile-facts" aria-label="个人信息">
+          <p><strong>Jiayuan Zhang</strong></p>
+          <p>Student / Developer</p>
+          <p>AI · Machine Learning · Systems</p>
+          <p>中文 / English</p>
+        </aside>
+      </section>
 
-    <nav class="nav">
-      <a href="index.html" class="active">HOME</a>
-<a href="life/" class="">LIFE</a>
-<a href="study/" class="">STUDY</a>
-<a href="projects/" class="">PROJECTS</a>
-<a href="about/" class="">ABOUT</a>
-    </nav>
+      <section aria-labelledby="news-title">
+        <h2 id="news-title">最近动态</h2>
+        <ul class="list">
+          <li><span class="date">2026.09</span> 建立个人网站，开始整理学习、项目与生活记录。</li>
+        </ul>
+      </section>
 
-    <div class="layout">
-      <main class="main">
-        
-<h2 class="section-title">Welcome</h2>
-<div class="window">
-  <div class="window-title">Message of the Day</div>
-  <div class="window-body">
-    <p>你好，我是 Jiayuan。这里是我的个人网站，用来放学习记录、项目、生活片段和一些乱七八糟但值得记住的东西。</p>
-    <p>视觉风格参考 2000 年代早期 PC 游戏启动器、服务器浏览器和 GoldSrc 时代的菜单界面，但没有使用任何官方素材。</p>
-    <a class="fake-button" href="about/">Read Profile</a>
+      <section aria-labelledby="explore-title">
+        <h2 id="explore-title">在这里</h2>
+        <ul class="item-list">
+          <li><h3><a href="study/">学习</a></h3><p>机器学习、计算机系统、论文阅读与实验笔记。</p></li>
+          <li><h3><a href="projects/">项目</a></h3><p>正在做和已经完成的作品与实践。</p></li>
+          <li><h3><a href="life/">生活</a></h3><p>日常、旅行、照片，以及想留下来的记录。</p></li>
+        </ul>
+      </section>
+    </main>
+    <footer class="site-footer">© 2026 Jiayuan Zhang · <a href="https://github.com/JiayuanZhang0121">GitHub</a></footer>
   </div>
-</div>
-
-<h2 class="section-title">Recent Activity</h2>
-<div class="entry">
-  <div class="entry-date">2026.09</div>
-  <div>
-    <h3><a href="life/">Personal site online</a></h3>
-    <p>把这个小站搭了起来。第一版：纯静态 HTML/CSS，托管在 GitHub Pages。</p>
-    <span class="tag">life</span><span class="tag">web</span>
-  </div>
-</div>
-<div class="entry">
-  <div class="entry-date">2026</div>
-  <div>
-    <h3><a href="study/">Study log initialized</a></h3>
-    <p>准备把长期学习内容拆成小块记录，而不是只把资料堆在收藏夹里。</p>
-    <span class="tag">study</span><span class="tag">notes</span>
-  </div>
-</div>
-<div class="entry">
-  <div class="entry-date">ACTIVE</div>
-  <div>
-    <h3><a href="projects/">Current projects</a></h3>
-    <p>这里会记录正在做、做完和已经放弃的项目。失败项目也保留。</p>
-    <span class="tag">projects</span>
-  </div>
-</div>
-
-      </main>
-
-      <aside class="sidebar">
-        
-<div class="window">
-  <div class="window-title">System Status</div>
-  <div class="window-body">
-    <div class="stat-row"><span>USER</span><span>Jiayuan</span></div>
-    <div class="stat-row"><span>STATUS</span><span>ONLINE</span></div>
-    <div class="stat-row"><span>LOCATION</span><span>EARTH</span></div>
-    <div class="stat-row"><span>UPTIME</span><span>SINCE 2026</span></div>
-  </div>
-</div>
-
-<div class="window">
-  <div class="window-title">Quick Links</div>
-  <div class="window-body">
-    <ul class="list-plain">
-      <li><a href="https://github.com/JiayuanZhang0121">GitHub Profile</a></li>
-      <li><a href="mailto:your@email.com">Email</a></li>
-      <li><a href="#">Resume / CV</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="window">
-  <div class="window-title">MOTD</div>
-  <div class="window-body">
-    <div class="quote">Keep it simple. Keep it personal.</div>
-  </div>
-</div>
-
-      </aside>
-    </div>
-
-    <footer class="footer">
-      <span>© 2026 Jiayuan Zhang</span>
-      <span>STATIC SITE // GITHUB PAGES // NO TRACKING</span>
-    </footer>
-  </div>
-
-  <script src="assets/site.js"></script>
 </body>
 </html>
