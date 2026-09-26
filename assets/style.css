@@ -56,6 +56,11 @@ p { margin-bottom: 13px; }
 .date { color: var(--muted); font-size: 14px; white-space: nowrap; }
 .news-list time { color: var(--muted); white-space: nowrap; }
 .document-links { margin-bottom: 4px; }
+.score-table { width: min(100%, 460px); border-collapse: collapse; margin: 12px 0 0; font-size: 15px; }
+.score-table th, .score-table td { padding: 6px 10px; border-bottom: 1px solid var(--rule); }
+.score-table th { text-align: left; font-weight: 400; }
+.score-table td { text-align: right; font-variant-numeric: tabular-nums; }
+.score-table thead th, .score-table tfoot th, .score-table tfoot td { font-weight: 700; }
 .page-intro { max-width: 680px; color: var(--muted); }
 .notice { color: var(--muted); font-size: 14px; }
 .site-footer { border-top: 1px solid var(--rule); padding: 17px 0 35px; color: var(--muted); font-size: 13px; }
