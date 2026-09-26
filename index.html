@@ -1,56 +1,70 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="description" content="Jiayuan Zhang 的个人主页：学习笔记、项目与生活记录。">
-  <title>首页 · Jiayuan Zhang</title>
+  <meta name="description" content="Jiayuan Zhang's personal website: education, notes, projects, and life.">
+  <link rel="alternate" hreflang="en" href="index.html">
+  <link rel="alternate" hreflang="zh-CN" href="zh/index.html">
+  <title>Home · Jiayuan Zhang</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <a class="skip-link" href="#content">跳转到正文</a>
+  <a class="skip-link" href="#content">Skip to content</a>
   <div class="page">
     <header class="site-header">
-      <p class="site-name"><a href="index.html">Jiayuan Zhang</a></p>
-      <p class="site-subtitle">学习笔记 · 项目 · 生活记录</p>
-      <nav class="site-nav" aria-label="主导航">
-        <a href="index.html" aria-current="page">首页</a>
-        <a href="study/">学习</a>
-        <a href="projects/">项目</a>
-        <a href="life/">生活</a>
-        <a href="about/">关于</a>
+      <div class="header-top">
+        <div><p class="site-name"><a href="index.html">Jiayuan Zhang</a></p><p class="site-subtitle">Computer Science · Notes · Projects</p></div>
+        <nav class="language-switch" aria-label="Language / 语言">
+        <a href="index.html" lang="en" aria-current="true">EN</a>
+        <a href="zh/index.html" lang="zh-CN">中文</a>
+        </nav>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="study/">Study</a>
+        <a href="projects/">Projects</a>
+        <a href="life/">Life</a>
+        <a href="about/">About</a>
       </nav>
     </header>
     <main id="content">
       <section class="intro" aria-labelledby="intro-title">
         <div>
-          <h1 id="intro-title">你好，我是 Jiayuan Zhang</h1>
-          <p class="lead">这里记录我的学习、项目和生活。关注 AI、机器学习与计算机系统，也会写下日常发现和一些值得记住的片段。</p>
-          <p>这个网站会随着学习和实践慢慢更新。</p>
-          <div class="link-row"><a href="https://github.com/JiayuanZhang0121">GitHub</a><a href="about/">关于我</a></div>
+          <h1 id="intro-title">Hello, I’m Jiayuan Zhang</h1>
+          <p class="lead">I am an undergraduate in Computer Science and Technology at North China University of Water Resources and Electric Power. I am interested in AI, machine learning, and computer systems.</p>
+          <p>This site collects my notes, projects, and moments from everyday life.</p>
+          <div class="link-row"><a href="https://github.com/JiayuanZhang0121">GitHub</a><a href="about/">More about me</a></div>
         </div>
-        <aside class="profile-facts" aria-label="个人信息">
+        <aside class="profile-facts" aria-label="Profile at a glance">
           <p><strong>Jiayuan Zhang</strong></p>
-          <p>Student / Developer</p>
+          <p>Computer Science undergraduate</p>
+          <p>NCWU · Zhengzhou, China</p>
           <p>AI · Machine Learning · Systems</p>
-          <p>中文 / English</p>
         </aside>
       </section>
-
       <section aria-labelledby="news-title">
-        <h2 id="news-title">最近动态</h2>
-        <ul class="list">
-          <li><span class="date">2026.09</span> 建立个人网站，开始整理学习、项目与生活记录。</li>
+        <h2 id="news-title">News</h2>
+        <ul class="list news-list">
+          <li><time datetime="2026-09-24">Sep 24, 2026</time> — Received preliminary admission to <a href="https://english.zzu.edu.cn/">Zhengzhou University</a> for postgraduate study through the recommendation track.</li>
+          <li><time datetime="2026-07-23">Jul 23, 2026</time> — Received my TOEFL iBT result: <strong>5.5 / 6</strong>.</li>
+          <li><time datetime="2026-07-19">Jul 19, 2026</time> — Took the TOEFL iBT.</li>
         </ul>
       </section>
-
+      <section aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        <h3><a href="https://www2.ncwu.edu.cn/ncwuenglish/">North China University of Water Resources and Electric Power</a></h3>
+        <p>Undergraduate, Computer Science and Technology · School of Information Engineering · 2023–present</p>
+        <p class="document-links">Undergraduate transcripts: <a href="assets/docs/transcript-en-redacted.pdf" type="application/pdf">English PDF</a> · <a href="assets/docs/transcript-zh-redacted.pdf" type="application/pdf">Chinese PDF</a></p>
+        <p class="notice">Public copies have the student ID redacted.</p>
+      </section>
       <section aria-labelledby="explore-title">
-        <h2 id="explore-title">在这里</h2>
+        <h2 id="explore-title">Explore</h2>
         <ul class="item-list">
-          <li><h3><a href="study/">学习</a></h3><p>机器学习、计算机系统、论文阅读与实验笔记。</p></li>
-          <li><h3><a href="projects/">项目</a></h3><p>正在做和已经完成的作品与实践。</p></li>
-          <li><h3><a href="life/">生活</a></h3><p>日常、旅行、照片，以及想留下来的记录。</p></li>
+          <li><h3><a href="study/">Study</a></h3><p>Learning notes on machine learning and computer systems.</p></li>
+          <li><h3><a href="projects/">Projects</a></h3><p>Things I am building and have built.</p></li>
+          <li><h3><a href="life/">Life</a></h3><p>Small records from outside the classroom.</p></li>
         </ul>
       </section>
     </main>
