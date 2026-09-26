@@ -42,6 +42,28 @@ SCORE_BLOCKS = {
         </table>
       </section>''',
 }
+AWARDS_BLOCKS = {
+    "en": '''      <section aria-labelledby="awards-title">
+        <h2 id="awards-title">Honors &amp; Awards</h2>
+        <p class="meta">North China University of Water Resources and Electric Power</p>
+        <ul class="item-list awards-list">
+          <li class="dated"><time class="date" datetime="2025-11-30">Nov 30, 2025</time><div><h3>First Prize Academic Scholarship</h3><p class="meta">2024–2025 academic year</p></div></li>
+          <li class="dated"><time class="date" datetime="2025-11-30">Nov 30, 2025</time><div><h3>First Prize Outstanding Student Scholarship</h3><p class="meta">2024–2025 academic year</p></div></li>
+          <li class="dated"><time class="date" datetime="2024-11-30">Nov 30, 2024</time><div><h3>First Prize Academic Scholarship</h3><p class="meta">2023–2024 academic year</p></div></li>
+          <li class="dated"><time class="date" datetime="2024-11-30">Nov 30, 2024</time><div><h3>Third Prize Outstanding Student Scholarship</h3><p class="meta">2023–2024 academic year</p></div></li>
+        </ul>
+      </section>''',
+    "zh": '''      <section aria-labelledby="awards-title">
+        <h2 id="awards-title">荣誉与奖学金</h2>
+        <p class="meta">华北水利水电大学</p>
+        <ul class="item-list awards-list">
+          <li class="dated"><time class="date" datetime="2025-11-30">2025.11.30</time><div><h3>2024—2025 学年一等奖学业奖学金</h3></div></li>
+          <li class="dated"><time class="date" datetime="2025-11-30">2025.11.30</time><div><h3>2024—2025 学年一等优秀学生奖学金</h3></div></li>
+          <li class="dated"><time class="date" datetime="2024-11-30">2024.11.30</time><div><h3>2023—2024 学年一等奖学业奖学金</h3></div></li>
+          <li class="dated"><time class="date" datetime="2024-11-30">2024.11.30</time><div><h3>2023—2024 学年三等优秀学生奖学金</h3></div></li>
+        </ul>
+      </section>''',
+}
 
 CONTENT = {
     "en": {
@@ -75,6 +97,7 @@ CONTENT = {
         <p class="document-links">Undergraduate transcripts: <a href="{{DOC_EN}}" type="application/pdf">English PDF</a> · <a href="{{DOC_ZH}}" type="application/pdf">Chinese PDF</a></p>
         <p class="notice">Public copies have the student ID redacted.</p>
       </section>
+{{AWARDS}}
       <section aria-labelledby="explore-title">
         <h2 id="explore-title">Explore</h2>
         <ul class="item-list">
@@ -112,6 +135,7 @@ CONTENT = {
         <li><h3>Zhengzhou University</h3><p>Preliminarily admitted for postgraduate study through the recommendation track on Sep 24, 2026.</p></li>
       </ul>
 {{SCORES}}
+{{AWARDS}}
       <h2>Documents</h2>
       <p class="document-links">Undergraduate transcripts: <a href="{{DOC_EN}}" type="application/pdf">English PDF</a> · <a href="{{DOC_ZH}}" type="application/pdf">Chinese PDF</a></p>
       <p class="notice">These public copies have the student ID redacted. The TOEFL score report is not published here.</p>
@@ -149,6 +173,7 @@ CONTENT = {
         <p class="document-links">本科成绩单：<a href="{{DOC_ZH}}" type="application/pdf">中文版 PDF</a> · <a href="{{DOC_EN}}" type="application/pdf">英文版 PDF</a></p>
         <p class="notice">公开版本已遮盖学号。</p>
       </section>
+{{AWARDS}}
       <section aria-labelledby="explore-title">
         <h2 id="explore-title">浏览更多</h2>
         <ul class="item-list">
@@ -186,6 +211,7 @@ CONTENT = {
         <li><h3>郑州大学</h3><p>2026 年 9 月 24 日获推免预录取，尚未入学。</p></li>
       </ul>
 {{SCORES}}
+{{AWARDS}}
       <h2>相关材料</h2>
       <p class="document-links">本科成绩单：<a href="{{DOC_ZH}}" type="application/pdf">中文版 PDF</a> · <a href="{{DOC_EN}}" type="application/pdf">英文版 PDF</a></p>
       <p class="notice">公开版本已遮盖学号。托福成绩报告未在网站公开。</p>
@@ -216,6 +242,7 @@ def page(language: str, route: str) -> str:
     body = CONTENT[language][route]
     replacements = {
         "{{SCORES}}": SCORE_BLOCKS[language],
+        "{{AWARDS}}": AWARDS_BLOCKS[language],
         "{{DOC_EN}}": root + "assets/docs/transcript-en-redacted.pdf",
         "{{DOC_ZH}}": root + "assets/docs/transcript-zh-redacted.pdf",
         **{f"{{{{{key.upper()}}}}}": target(current_base, key) for key in ROUTES},
